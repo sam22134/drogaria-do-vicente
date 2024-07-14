@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login - Drogaria do Vicente</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="header">
+    <h1>Login - Drogaria do Vicente</h1>
+  </div>
+  <div class="container">
+    <div class="box">
+      <h2>Login</h2>
+      <form id="login-form">
+        <p>Usuário:</p>
+        <input type="text" id="username" required>
+        <p>Senha:</p>
+        <input type="password" id="password" required>
+        <button type="button" onclick="login()">Entrar</button>
+        <div id="login-message" class="message">Usuário ou senha incorretos!</div>
+      </form>
+    </div>
+  </div>
+  <script src="js/login.js"></script>
+</body>
+</html>

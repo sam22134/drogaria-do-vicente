@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Painel de Controle - Drogaria do Vicente</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="header">
+    <h1>Painel de Controle - Drogaria do Vicente</h1>
+  </div>
+  <nav>
+    <a href="dashboard.html">Painel de Controle</a>
+    <a href="vendas.html">Sistema de Vendas</a>
+    <a href="relatorios.html">Relatórios de Vendas</a>
+  </nav>
+  <div class="container">
+    <div class="box">
+      <h2>Gerenciar Usuários</h2>
+      <form id="user-form">
+        <p>Nome:</p>
+        <input type="text" id="new-username" required>
+        <p>Senha:</p>
+        <input type="password" id="new-password" required>
+        <p>Permissões:</p>
+        <select id="permissions">
+          <option value="admin">Admin</option>
+          <option value="user">Usuário</option>
+        </select>
+        <button type="button" onclick="createUser()">Criar Usuário</button>
+      </form>
+    </div>
+    <div class="box">
+      <h2>Configurações Gerais</h2>
+      <p>Nome da Drogaria:</p>
+      <input type="text" id="store-name" value="Drogaria do Vicente">
+      <p>CNPJ:</p>
+      <input type="text" id="store-cnpj" value="00.000.000/0000-00">
+      <button type="button" onclick="saveSettings()">Salvar Configurações</button>
+    </div>
+  </div>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

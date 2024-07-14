@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sistema de Vendas - Drogaria do Vicente</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="header">
+    <h1>Sistema de Vendas - Drogaria do Vicente</h1>
+  </div>
+  <nav>
+    <a href="dashboard.html">Painel de Controle</a>
+    <a href="vendas.html">Sistema de Vendas</a>
+    <a href="relatorios.html">Relatórios de Vendas</a>
+  </nav>
+  <div class="container">
+    <div class="box">
+      <h2>Registrar Venda</h2>
+      <form id="sales-form">
+        <p>Atendente:</p>
+        <select id="salesperson">
+          <!-- Opções carregadas dinamicamente -->
+        </select>
+        <p>Nome do Cliente:</p>
+        <input type="text" id="client-name" required>
+        <p>Endereço:</p>
+        <input type="text" id="address" required>
+        <p>Ponto de Referência:</p>
+        <input type="text" id="reference-point">
+        <p>Observação:</p>
+        <input type="text" id="observation">
+        <p>Forma de Pagamento:</p>
+        <select id="payment-method">
+          <option value="Dinheiro">Dinheiro</option>
+          <option value="Cartão">Cartão</option>
+        </select>
+        <p>Produtos:</p>
+        <div id="product-list">
+          <input type="text" class="product-name" placeholder="Nome do Produto" required>
+          <input type="number" class="product-value" placeholder="Valor do Produto" oninput="calculateTotal()">
+        </div>
+        <button type="button" onclick="addProductField()">Adicionar Produto</button>
+        <p>Total: <input type="text" id="total" readonly></p>
+        <button type="button" onclick="saveSale()">Salvar Venda</button>
+        <div id="sale-message" class="message">Venda registrada com sucesso!</div>
+      </form>
+    </div>
+  </div>
+  <div id="visualizar-vendas" class="container">
+    <h2>Visualizar Vendas</h2>
+    <div id="sale-details">
+      <!-- Detalhes da venda serão carregados aqui -->
+    </div>
+  </div>
+  <div id="faturar" class="box" style="display: none;">
+    <h2>Faturar</h2>
+    <p id="total-faturar"></p>
+    <p>Atendente do Caixa:</p>
+    <select id="cashier">
+      <!-- Opções carregadas dinamicamente -->
+    </select>
+    <p>Valor Pago: <input type="number" id="paid" oninput="calculateChange()"></p>
+    <p>Troco: <input type="text" id="change" readonly></p>
+    <button onclick="finalizeSale()">Finalizar Venda</button>
+    <div id="finalize-message" class="message">Venda finalizada com sucesso!</div>
+  </div>
+  <script src="js/vendas.js"></script>
+</body>
+</html>
